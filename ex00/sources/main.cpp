@@ -6,15 +6,12 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 13:34:53 by bszikora          #+#    #+#             */
-/*   Updated: 2025/10/14 13:44:37 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/10/14 14:05:32 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
-// int main(void)
-// {
-	
-// }
+
 int main( void ) {
 int a = 2;
 int b = 3;
