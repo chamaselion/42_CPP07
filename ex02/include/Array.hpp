@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:16:57 by bszikora          #+#    #+#             */
-/*   Updated: 2025/10/28 12:50:00 by bszikora         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:14:31 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	T& operator[](unsigned int index);
 	const T& operator[](unsigned int index) const;
 	
-	unsigned int size() const;
+	unsigned int sizef() const;
 	
 	class OutOfBoundsException : public std::exception
 	{
@@ -110,7 +110,7 @@ const T& Array<T>::operator[](unsigned int index) const
 }
 
 template <typename T>
-unsigned int Array<T>::size() const
+unsigned int Array<T>::sizef() const
 {
 	return size;
 }
