@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 13:48:00 by bszikora          #+#    #+#             */
-/*   Updated: 2025/10/28 12:51:57 by bszikora         ###   ########.fr       */
+/*   Updated: 2026/02/12 23:45:45 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int main()
 	std::cout << "Original numbers: ";
 	iter(numbers, 5, print_int);
 	std::cout << std::endl;
-
-
+	
 	iter(numbers, 5, increment_int);
 	std::cout << "After increment: ";
 	iter(numbers, 5, print_int);
@@ -35,6 +34,12 @@ int main()
 	std::cout << "Words: ";
 	iter(words, 3, print_string);
 	std::cout << std::endl;
-
-	return 0;
+	
+	// int numbers[] = {1, 2, 3, 4, 5};
+	// std::string words[] = {"Hello", "World", "!"};
+	
+	// iter(numbers, 5, cmon_do_smg);
+	// iter(words, 3, cmon_do_smg);
+	// return 0;
 }
+
