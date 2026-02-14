@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 13:35:41 by bszikora          #+#    #+#             */
-/*   Updated: 2025/10/14 13:45:53 by bszikora         ###   ########.fr       */
+/*   Updated: 2026/02/12 23:11:57 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 template <typename T>
 void swap(T &a, T &b)
 {
-	T strg = a;
-	a = b;
-	b = strg;
+	std::swap(a, b);
 }
 
 template <typename T>
-T min(T a, T b)
+const T & min(const T &a, const T &b)
 {
 	if (a == b)
 		return b;
@@ -35,7 +33,7 @@ T min(T a, T b)
 }
 
 template <typename T>
-T max(T a, T b)
+const T & max(const T &a, const T &b)
 {
 	if (a == b)
 		return b;
