@@ -6,7 +6,7 @@
 /*   By: bszikora <bszikora@student.42helbronn.d    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:16:57 by bszikora          #+#    #+#             */
-/*   Updated: 2025/10/28 13:14:31 by bszikora         ###   ########.fr       */
+/*   Updated: 2026/02/13 00:01:38 by bszikora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Array
 {
 private:
 	T				*elements;
-	unsigned int	size;
+	unsigned int	m_size;
 
 public:
 	Array();
@@ -33,7 +33,7 @@ public:
 	T& operator[](unsigned int index);
 	const T& operator[](unsigned int index) const;
 	
-	unsigned int sizef() const;
+	unsigned int size() const;
 	
 	class OutOfBoundsException : public std::exception
 	{
@@ -43,12 +43,12 @@ public:
 };
 
 template <typename T>
-Array<T>::Array() : elements(NULL), size(0)
+Array<T>::Array() : elements(NULL), m_size(0)
 {
 }
 
 template <typename T>
-Array<T>::Array(unsigned int n) : elements(NULL), size(n)
+Array<T>::Array(unsigned int n) : elements(NULL), m_size(n)
 {
 	if (n > 0)
 	{
@@ -59,12 +59,12 @@ Array<T>::Array(unsigned int n) : elements(NULL), size(n)
 }
 
 template <typename T>
-Array<T>::Array(const Array& other) : elements(NULL), size(other.size)
+Array<T>::Array(const Array& other) : elements(NULL), m_size(other.m_size)
 {
-	if (size > 0)
+	if (m_size > 0)
 	{
-		elements = new T[size];
-		for (unsigned int i = 0; i < size; i++)
+		elements = new T[m_size];
+		for (unsigned int i = 0; i < m_size; i++)
 			elements[i] = other.elements[i];
 	}
 }
@@ -75,12 +75,12 @@ Array<T>& Array<T>::operator=(const Array& other)
 	if (this != &other)
 	{
 		delete[] elements;
-		size = other.size;
+		m_size = other.m_size;
 		elements = NULL;
-		if (size > 0)
+		if (m_size > 0)
 		{
-			elements = new T[size];
-			for (unsigned int i = 0; i < size; i++)
+			elements = new T[m_size];
+			for (unsigned int i = 0; i < m_size; i++)
 				elements[i] = other.elements[i];
 		}
 	}
@@ -96,7 +96,7 @@ Array<T>::~Array()
 template <typename T>
 T& Array<T>::operator[](unsigned int index)
 {
-	if (index >= size)
+	if (index >= m_size)
 		throw OutOfBoundsException();
 	return elements[index];
 }
@@ -104,15 +104,15 @@ T& Array<T>::operator[](unsigned int index)
 template <typename T>
 const T& Array<T>::operator[](unsigned int index) const
 {
-	if (index >= size)
+	if (index >= m_size)
 		throw OutOfBoundsException();
 	return elements[index];
 }
 
 template <typename T>
-unsigned int Array<T>::sizef() const
+unsigned int Array<T>::size() const
 {
-	return size;
+	return m_size;
 }
 
 template <typename T>
